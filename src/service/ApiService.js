@@ -61,6 +61,12 @@ export default class ApiService {
         return response.data
     }
 
+    static async deleteMyAccount() {
+        const response = await axios.delete(`${this.BASE_URL}/users/delete-my-account`, {
+            headers: this.getHeader()
+        });
+        return response.data;
+    }
 
     /* This is to delete a user */
     static async deleteUser(userId) {

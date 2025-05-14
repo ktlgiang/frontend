@@ -25,12 +25,13 @@ const EditProfilePage = () => {
             return;
         }
         try {
-            await ApiService.deleteUser(user.id);
+            await ApiService.deleteMyAccount(); // dùng API mới
             navigate('/signup');
         } catch (error) {
             setError(error.message);
         }
     };
+
 
     return (
         <div className="edit-profile-page">
